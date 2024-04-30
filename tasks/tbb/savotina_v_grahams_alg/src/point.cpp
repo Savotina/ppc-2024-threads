@@ -36,7 +36,7 @@ void SavotinaTbb::SavotinaPoint::swap(SavotinaTbb::SavotinaPoint& p2) {
   p2 = tmp;
 }
 
-bool SavotinaTbb::SavotinaPoint::operator()(SavotinaTbb::SavotinaPoint& p0, SavotinaTbb::SavotinaPoint& p1) const {
+/*bool SavotinaTbb::SavotinaPoint::operator()(SavotinaTbb::SavotinaPoint& p0, SavotinaTbb::SavotinaPoint& p1) const {
   bool res = true;
 
   double x1 = x - p0.x;
@@ -57,7 +57,34 @@ bool SavotinaTbb::SavotinaPoint::operator()(SavotinaTbb::SavotinaPoint& p0, Savo
   }
 
   return res;
+}*/
+
+double SavotinaTbb::SavotinaPoint::angle(SavotinaPoint p)
+{
+  double dx = p.x - x;
+  double dy = p.y - y;
+  return atan2(dy, dx);
 }
+
+
+bool SavotinaTbb::SavotinaPoint::operator()(SavotinaTbb::SavotinaPoint& p0, SavotinaTbb::SavotinaPoint& p1) const {
+    /*std::cout << "p1: " << p1 << std::endl;
+    std::cout << "p2: " << p2 << std::endl;
+    std::cout << "ANGLE p1: " << start.angle(p1) << std::endl;
+    std::cout << "ANGLE p2: " << start.angle(p2) << std::endl << std::endl;*/
+
+    double angle1 = p0.angle((*this));
+    double angle2 = p0.angle(p1);
+
+    if (angle1 < angle2)
+        return true;
+    else if (angle1 > angle2)
+        return false;
+    else
+        return (*this).Distance(p0) < p1.Distance(p0);
+}
+
+
 
 double SavotinaTbb::SavotinaPoint::Distance(const SavotinaTbb::SavotinaPoint& p) const {
   return sqrt((p.x - x) * (p.x - x) + (p.y - y) * (p.y - y));

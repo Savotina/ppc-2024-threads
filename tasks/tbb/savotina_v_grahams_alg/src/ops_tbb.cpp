@@ -185,7 +185,7 @@ void SavotinaSortTBB(std::vector<SavotinaPoint>& points) {
   std::cout << "\nперед сортировкой: ";
   Print(points);
 
-  tbb::parallel_sort(points.begin(), points.end(), // points.begin() + 1
+  tbb::parallel_sort(points.begin() + 1, points.end(), // points.begin() + 1
                      [&p0](SavotinaPoint& p1, SavotinaPoint& p2) { return p1(p0, p2); });
 
   std::cout << "\nпосле сортировки: ";
