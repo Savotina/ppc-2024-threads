@@ -45,14 +45,14 @@ bool SavotinaTbb::SavotinaPoint::operator()(SavotinaTbb::SavotinaPoint& p0, Savo
   double y2 = p1.y - y;
   double val = x1 * y2 - y1 * x2;
 
-  if (val < 0)
+  if (val <= 0)
     res = false;
   else {
     float dist1 = (*this).Distance(SavotinaTbb::SavotinaPoint(x, y));
     float dist2 = (*this).Distance(p1);
 
     if (dist1 != 0.0 || dist2 != 0.0) {
-      if (dist2 < dist1) res = false;
+      if (dist2 <= dist1) res = false;
     }
   }
 
