@@ -54,6 +54,11 @@ TEST(savotina_v_grahams_alg_tbb, Test1) {
   testGrahamsAlgTbb.post_processing();
 
   for (size_t i = 0; i < mchSeq.size(); ++i) {
+    std::cout << '(' << mchSeq[i].x << ", " << mchSeq[i].y << ") and (";
+    std::cout << mchTbb[i].x << ", " << mchTbb[i].y << ")\n";
+  }
+
+  for (size_t i = 0; i < mchSeq.size(); ++i) {
     ASSERT_EQ(mchSeq[i].x, mchTbb[i].x);
     ASSERT_EQ(mchSeq[i].y, mchTbb[i].y);
   }
@@ -118,6 +123,11 @@ TEST(savotina_v_grahams_alg_tbb, Test2) {
   testGrahamsAlgTbb.post_processing();
 
   for (size_t i = 0; i < mchSeq.size(); ++i) {
+    std::cout << '(' << mchSeq[i].x << ", " << mchSeq[i].y << ") and (";
+    std::cout << mchTbb[i].x << ", " << mchTbb[i].y << ")\n";
+  }
+
+  for (size_t i = 0; i < mchSeq.size(); ++i) {
     ASSERT_EQ(mchSeq[i].x, mchTbb[i].x);
     ASSERT_EQ(mchSeq[i].y, mchTbb[i].y);
   }
@@ -174,6 +184,11 @@ TEST(savotina_v_grahams_alg_tbb, Test3) {
   testGrahamsAlgTbb.post_processing();
 
   for (size_t i = 0; i < mchSeq.size(); ++i) {
+    std::cout << '(' << mchSeq[i].x << ", " << mchSeq[i].y << ") and (";
+    std::cout << mchTbb[i].x << ", " << mchTbb[i].y << ")\n";
+  }
+
+  for (size_t i = 0; i < mchSeq.size(); ++i) {
     ASSERT_EQ(mchSeq[i].x, mchTbb[i].x);
     ASSERT_EQ(mchSeq[i].y, mchTbb[i].y);
   }
@@ -216,6 +231,11 @@ TEST(savotina_v_grahams_alg_tbb, Test4) {
   testGrahamsAlgTbb.pre_processing();
   testGrahamsAlgTbb.run();
   testGrahamsAlgTbb.post_processing();
+
+  for (size_t i = 0; i < mchSeq.size(); ++i) {
+    std::cout << '(' << mchSeq[i].x << ", " << mchSeq[i].y << ") and (";
+    std::cout << mchTbb[i].x << ", " << mchTbb[i].y << ")\n";
+  }
 
   for (size_t i = 0; i < mchSeq.size(); ++i) {
     ASSERT_EQ(mchSeq[i].x, mchTbb[i].x);
@@ -264,6 +284,11 @@ TEST(savotina_v_grahams_alg_tbb, Test5) {
   testGrahamsAlgTbb.post_processing();
 
   for (size_t i = 0; i < mchSeq.size(); ++i) {
+    std::cout << '(' << mchSeq[i].x << ", " << mchSeq[i].y << ") and (";
+    std::cout << mchTbb[i].x << ", " << mchTbb[i].y << ")\n";
+  }
+
+  for (size_t i = 0; i < mchSeq.size(); ++i) {
     ASSERT_EQ(mchSeq[i].x, mchTbb[i].x);
     ASSERT_EQ(mchSeq[i].y, mchTbb[i].y);
   }
@@ -306,6 +331,11 @@ TEST(savotina_v_grahams_alg_tbb, Test6) {
   testGrahamsAlgTbb.pre_processing();
   testGrahamsAlgTbb.run();
   testGrahamsAlgTbb.post_processing();
+
+  for (size_t i = 0; i < mchSeq.size(); ++i) {
+    std::cout << '(' << mchSeq[i].x << ", " << mchSeq[i].y << ") and (";
+    std::cout << mchTbb[i].x << ", " << mchTbb[i].y << ")\n";
+  }
 
   for (size_t i = 0; i < mchSeq.size(); ++i) {
     ASSERT_EQ(mchSeq[i].x, mchTbb[i].x);
@@ -357,6 +387,11 @@ TEST(savotina_v_grahams_alg_tbb, Test7) {
   testGrahamsAlgTbb.pre_processing();
   testGrahamsAlgTbb.run();
   testGrahamsAlgTbb.post_processing();
+
+  for (size_t i = 0; i < mchSeq.size(); ++i) {
+    std::cout << '(' << mchSeq[i].x << ", " << mchSeq[i].y << ") and (";
+    std::cout << mchTbb[i].x << ", " << mchTbb[i].y << ")\n";
+  }
 
   for (size_t i = 0; i < mchSeq.size(); ++i) {
     ASSERT_EQ(mchSeq[i].x, mchTbb[i].x);
