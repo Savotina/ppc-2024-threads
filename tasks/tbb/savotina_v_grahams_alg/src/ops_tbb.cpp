@@ -1,16 +1,15 @@
 // Copyright 2024 Savotina Valeria
 
 #include "tbb/savotina_v_grahams_alg/include/ops_tbb.hpp"
-#include <iostream>
+// #include <iostream>
 #include "tbb/parallel_sort.h"
 
 namespace SavotinaTbb {
 
-void Print(std::vector<SavotinaPoint>& pointArr) {
+/*void Print(std::vector<SavotinaPoint>& pointArr) {
   for (size_t i = 0; i < pointArr.size(); ++i)
     std::cout << "(" << pointArr[i].x << ", " << pointArr[i].y << "), ";
-}
-
+}*/
 
 // Quick Sort
 void SavotinaQuickSort(std::vector<SavotinaPoint>& pointArr, int left, int right) {
@@ -182,15 +181,11 @@ bool SavotinaGrahamsAlgorithmSequential::post_processing() {
 // TBB Sort
 void SavotinaSortTBB(std::vector<SavotinaPoint>& points) {
   SavotinaPoint p0 = points[0];
-  std::cout << "\nперед сортировкой: ";
-  Print(points);
+  // Print(points);
 
-  tbb::parallel_sort(points.begin() + 1, points.end(), // points.begin() + 1
+  tbb::parallel_sort(points.begin() + 1, points.end(),
                      [&p0](SavotinaPoint& p1, SavotinaPoint& p2) { return p1(p0, p2); });
-
-  std::cout << "\nпосле сортировки: ";
-  Print(points);
-  std::cout << "\n\n";
+  // Print(points);
 }
 
 bool SavotinaGrahamsAlgorithmTbbParallel::pre_processing() {
